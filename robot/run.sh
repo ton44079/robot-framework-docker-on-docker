@@ -23,6 +23,6 @@
 export DRIVER_HOME=/usr/src/project/driver
 export PATH=.:$DRIVER_HOME:$PATH
 
-robot -v URL:http://192.168.1.115 test.robot
+robot -v URL:http://192.168.1.115 ./cases/*.robot
 
 

@@ -1,39 +1,550 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20191003 04:53:37.996" generator="Robot 3.1.2 (Python 2.7.16 on linux2)">
-<suite source="/usr/src/project/test.robot" id="s1" name="Test">
-<test id="s1-t1" name="Case 1">
-<kw name="Open Landing Page">
+<robot rpa="false" generated="20191003 05:46:30.048" generator="Robot 3.1.2 (Python 2.7.16 on linux2)">
+<suite id="s1" name="Footer Responsive &amp; Header Responsive &amp; Landding Page Check">
+<suite source="/usr/src/project/cases/footer_responsive.robot" id="s1-s1" name="Footer Responsive">
+<kw type="setup" name="Open Landing Page" library="share">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>${URL}</arg>
 <arg>browser=headlesschrome</arg>
 </arguments>
-<msg timestamp="20191003 04:53:38.106" level="INFO">Opening browser 'headlesschrome' to base url 'http://192.168.1.115'.</msg>
-<status status="PASS" endtime="20191003 04:53:41.063" starttime="20191003 04:53:38.106"></status>
+<msg timestamp="20191003 05:46:30.165" level="INFO">Opening browser 'headlesschrome' to base url 'http://192.168.1.115'.</msg>
+<status status="PASS" endtime="20191003 05:46:36.747" starttime="20191003 05:46:30.165"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>id:logo_header</arg>
 </arguments>
-<status status="PASS" endtime="20191003 04:53:41.105" starttime="20191003 04:53:41.063"></status>
+<status status="PASS" endtime="20191003 05:46:36.782" starttime="20191003 05:46:36.748"></status>
 </kw>
-<status status="PASS" endtime="20191003 04:53:41.105" starttime="20191003 04:53:38.106"></status>
+<status status="PASS" endtime="20191003 05:46:36.782" starttime="20191003 05:46:30.165"></status>
 </kw>
-<status status="PASS" endtime="20191003 04:53:41.105" critical="yes" starttime="20191003 04:53:38.105"></status>
+<test id="s1-s1-t1" name="Mobile Footer">
+<kw name="Set Mobile Screen" library="share">
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>425</arg>
+<arg>768</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:36.897" starttime="20191003 05:46:36.784"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:36.897" starttime="20191003 05:46:36.783"></status>
+</kw>
+<kw name="Check Footer Should Be Visible" library="footer_layout">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:36.940" starttime="20191003 05:46:36.898"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:36.941" starttime="20191003 05:46:36.898"></status>
+</kw>
+<kw name="ตรวจสอบโลโก้ line บนพื้นที่สีเขียว" library="footer_layout">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(2)</arg>
+<arg>href</arg>
+<arg>http://line.me/ti/p/%40servicetescobroker</arg>
+</arguments>
+<msg timestamp="20191003 05:46:36.978" level="INFO">Element 'css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(2)' attribute 'href' contains value 'http://line.me/ti/p/%40servicetescobroker'.</msg>
+<status status="PASS" endtime="20191003 05:46:36.978" starttime="20191003 05:46:36.941"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:36.978" starttime="20191003 05:46:36.941"></status>
+</kw>
+<kw name="ตรวจสอบโลโก้ เบอร์ โทร บนพื้นที่สีเขียว" library="footer_layout">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(1)</arg>
+<arg>href</arg>
+<arg>tel:026278888</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.003" level="INFO">Element 'css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(1)' attribute 'href' contains value 'tel:026278888'.</msg>
+<status status="PASS" endtime="20191003 05:46:37.003" starttime="20191003 05:46:36.979"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.003" starttime="20191003 05:46:36.978"></status>
+</kw>
+<kw name="ตรวจสอบโลโก้ ค้นหาสาขาใกล่บ้าน บนพื้นที่สีเขียว" library="footer_layout">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(3)</arg>
+<arg>href</arg>
+<arg>https://www.tescolotusmoney.com/th/Contactus/SearchBranch.html</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.024" level="INFO">Element 'css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(3)' attribute 'href' contains value 'https://www.tescolotusmoney.com/th/Contactus/SearchBranch.html'.</msg>
+<status status="PASS" endtime="20191003 05:46:37.024" starttime="20191003 05:46:37.003"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.024" starttime="20191003 05:46:37.003"></status>
+</kw>
+<kw name="รายการเมนูควรแสดงสำหรับ Mobile" library="footer_layout">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>id:${mobile_menu_id}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191003 05:46:37.091" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191003 05:46:37.091" starttime="20191003 05:46:37.038"></status>
+</kw>
+<msg timestamp="20191003 05:46:37.092" level="FAIL">Element with locator 'id:footer_mobile_menu' not found.</msg>
+<status status="FAIL" endtime="20191003 05:46:37.092" starttime="20191003 05:46:37.024"></status>
+</kw>
+<status status="FAIL" endtime="20191003 05:46:37.092" starttime="20191003 05:46:37.024"></status>
+</kw>
+<tags>
+<tag>PROD</tag>
+<tag>SIT</tag>
+<tag>UAT</tag>
+</tags>
+<status status="FAIL" endtime="20191003 05:46:37.092" critical="yes" starttime="20191003 05:46:36.783">Element with locator 'id:footer_mobile_menu' not found.</status>
 </test>
-<status status="PASS" endtime="20191003 04:53:41.106" starttime="20191003 04:53:37.999"></status>
+<test id="s1-s1-t2" name="Tablet Footer">
+<kw name="Set Tablet Screen" library="share">
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>768</arg>
+<arg>768</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:37.206" starttime="20191003 05:46:37.094"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.207" starttime="20191003 05:46:37.093"></status>
+</kw>
+<kw name="Check Footer Should Be Visible" library="footer_layout">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:37.234" starttime="20191003 05:46:37.207"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.235" starttime="20191003 05:46:37.207"></status>
+</kw>
+<kw name="ตรวจสอบโลโก้ line บนพื้นที่สีเขียว" library="footer_layout">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(2)</arg>
+<arg>href</arg>
+<arg>http://line.me/ti/p/%40servicetescobroker</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.253" level="INFO">Element 'css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(2)' attribute 'href' contains value 'http://line.me/ti/p/%40servicetescobroker'.</msg>
+<status status="PASS" endtime="20191003 05:46:37.253" starttime="20191003 05:46:37.235"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.253" starttime="20191003 05:46:37.235"></status>
+</kw>
+<kw name="ตรวจสอบโลโก้ เบอร์ โทร บนพื้นที่สีเขียว" library="footer_layout">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(1)</arg>
+<arg>href</arg>
+<arg>tel:026278888</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.272" level="INFO">Element 'css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(1)' attribute 'href' contains value 'tel:026278888'.</msg>
+<status status="PASS" endtime="20191003 05:46:37.272" starttime="20191003 05:46:37.254"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.272" starttime="20191003 05:46:37.254"></status>
+</kw>
+<kw name="ตรวจสอบโลโก้ ค้นหาสาขาใกล่บ้าน บนพื้นที่สีเขียว" library="footer_layout">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(3)</arg>
+<arg>href</arg>
+<arg>https://www.tescolotusmoney.com/th/Contactus/SearchBranch.html</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.290" level="INFO">Element 'css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(3)' attribute 'href' contains value 'https://www.tescolotusmoney.com/th/Contactus/SearchBranch.html'.</msg>
+<status status="PASS" endtime="20191003 05:46:37.290" starttime="20191003 05:46:37.273"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.290" starttime="20191003 05:46:37.272"></status>
+</kw>
+<kw name="รายการเมนูไม่ควรแสดงสำหรับ Mobile" library="footer_layout">
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>id:${mobile_menu_id}</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.301" level="INFO">Element 'id:footer_mobile_menu' did not exist.</msg>
+<status status="PASS" endtime="20191003 05:46:37.301" starttime="20191003 05:46:37.291"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.301" starttime="20191003 05:46:37.290"></status>
+</kw>
+<kw name="รายการเมนูควรแสดงสำหรับ Tablet &amp; Desktop" library="footer_layout">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>id:${menu_id}</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.329" level="INFO">Element 'id:footer_menu' is displayed.</msg>
+<status status="PASS" endtime="20191003 05:46:37.329" starttime="20191003 05:46:37.302"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.329" starttime="20191003 05:46:37.301"></status>
+</kw>
+<tags>
+<tag>PROD</tag>
+<tag>SIT</tag>
+<tag>UAT</tag>
+</tags>
+<status status="PASS" endtime="20191003 05:46:37.329" critical="yes" starttime="20191003 05:46:37.093"></status>
+</test>
+<test id="s1-s1-t3" name="Desktop Footer">
+<kw name="Set Desktop Screen" library="share">
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>1164</arg>
+<arg>768</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:37.442" starttime="20191003 05:46:37.330"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.442" starttime="20191003 05:46:37.330"></status>
+</kw>
+<kw name="Check Footer Should Be Visible" library="footer_layout">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:37.469" starttime="20191003 05:46:37.443"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.469" starttime="20191003 05:46:37.442"></status>
+</kw>
+<kw name="ตรวจสอบโลโก้ line บนพื้นที่สีเขียว" library="footer_layout">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(2)</arg>
+<arg>href</arg>
+<arg>http://line.me/ti/p/%40servicetescobroker</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.488" level="INFO">Element 'css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(2)' attribute 'href' contains value 'http://line.me/ti/p/%40servicetescobroker'.</msg>
+<status status="PASS" endtime="20191003 05:46:37.488" starttime="20191003 05:46:37.470"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.488" starttime="20191003 05:46:37.470"></status>
+</kw>
+<kw name="ตรวจสอบโลโก้ เบอร์ โทร บนพื้นที่สีเขียว" library="footer_layout">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(1)</arg>
+<arg>href</arg>
+<arg>tel:026278888</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.506" level="INFO">Element 'css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(1)' attribute 'href' contains value 'tel:026278888'.</msg>
+<status status="PASS" endtime="20191003 05:46:37.506" starttime="20191003 05:46:37.489"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.506" starttime="20191003 05:46:37.488"></status>
+</kw>
+<kw name="ตรวจสอบโลโก้ ค้นหาสาขาใกล่บ้าน บนพื้นที่สีเขียว" library="footer_layout">
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(3)</arg>
+<arg>href</arg>
+<arg>https://www.tescolotusmoney.com/th/Contactus/SearchBranch.html</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.524" level="INFO">Element 'css:#app &gt; div &gt; footer &gt; div &gt; div.v-card__text &gt; div &gt; a:nth-child(3)' attribute 'href' contains value 'https://www.tescolotusmoney.com/th/Contactus/SearchBranch.html'.</msg>
+<status status="PASS" endtime="20191003 05:46:37.524" starttime="20191003 05:46:37.507"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.525" starttime="20191003 05:46:37.507"></status>
+</kw>
+<kw name="รายการเมนูไม่ควรแสดงสำหรับ Mobile" library="footer_layout">
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>id:${mobile_menu_id}</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.535" level="INFO">Element 'id:footer_mobile_menu' did not exist.</msg>
+<status status="PASS" endtime="20191003 05:46:37.536" starttime="20191003 05:46:37.525"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.536" starttime="20191003 05:46:37.525"></status>
+</kw>
+<kw name="รายการเมนูควรแสดงสำหรับ Tablet &amp; Desktop" library="footer_layout">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>id:${menu_id}</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.557" level="INFO">Element 'id:footer_menu' is displayed.</msg>
+<status status="PASS" endtime="20191003 05:46:37.557" starttime="20191003 05:46:37.536"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:37.558" starttime="20191003 05:46:37.536"></status>
+</kw>
+<tags>
+<tag>PROD</tag>
+<tag>SIT</tag>
+<tag>UAT</tag>
+</tags>
+<status status="PASS" endtime="20191003 05:46:37.558" critical="yes" starttime="20191003 05:46:37.329"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20191003 05:46:37.618" starttime="20191003 05:46:37.560"></status>
+</kw>
+<status status="FAIL" endtime="20191003 05:46:37.618" starttime="20191003 05:46:30.067"></status>
+</suite>
+<suite source="/usr/src/project/cases/header_responsive.robot" id="s1-s2" name="Header Responsive">
+<kw type="setup" name="Open Landing Page" library="share">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=headlesschrome</arg>
+</arguments>
+<msg timestamp="20191003 05:46:37.654" level="INFO">Opening browser 'headlesschrome' to base url 'http://192.168.1.115'.</msg>
+<status status="PASS" endtime="20191003 05:46:40.807" starttime="20191003 05:46:37.653"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id:logo_header</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:40.848" starttime="20191003 05:46:40.807"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:40.849" starttime="20191003 05:46:37.653"></status>
+</kw>
+<test id="s1-s2-t1" name="Mobile Header">
+<kw name="Set Mobile Screen" library="share">
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>425</arg>
+<arg>768</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:40.962" starttime="20191003 05:46:40.850"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:40.962" starttime="20191003 05:46:40.849"></status>
+</kw>
+<kw name="Check Header Should Be Visible" library="header_layout">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id:${header_id}</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:41.003" starttime="20191003 05:46:40.963"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:41.003" starttime="20191003 05:46:40.963"></status>
+</kw>
+<kw name="Check Hamburger menu Should Be Visible" library="header_layout">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>id:${hambuerger_menu_id}</arg>
+</arguments>
+<msg timestamp="20191003 05:46:41.033" level="INFO">Element 'id:header_hamburger_menu_open' is displayed.</msg>
+<status status="PASS" endtime="20191003 05:46:41.033" starttime="20191003 05:46:41.004"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:41.034" starttime="20191003 05:46:41.003"></status>
+</kw>
+<kw name="Check Menu List" library="header_layout">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:${hambuerger_menu_id}</arg>
+</arguments>
+<msg timestamp="20191003 05:46:41.035" level="INFO">Clicking element 'id:header_hamburger_menu_open'.</msg>
+<status status="PASS" endtime="20191003 05:46:41.093" starttime="20191003 05:46:41.034"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>id:${close_button_menu_id}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191003 05:46:41.217" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191003 05:46:41.217" starttime="20191003 05:46:41.120"></status>
+</kw>
+<msg timestamp="20191003 05:46:41.217" level="FAIL">The element 'id:header_hamburger_menu_close' should be visible, but it is not.</msg>
+<status status="FAIL" endtime="20191003 05:46:41.217" starttime="20191003 05:46:41.093"></status>
+</kw>
+<status status="FAIL" endtime="20191003 05:46:41.217" starttime="20191003 05:46:41.034"></status>
+</kw>
+<tags>
+<tag>Development</tag>
+<tag>Production</tag>
+<tag>Staging</tag>
+</tags>
+<status status="FAIL" endtime="20191003 05:46:41.218" critical="yes" starttime="20191003 05:46:40.849">The element 'id:header_hamburger_menu_close' should be visible, but it is not.</status>
+</test>
+<test id="s1-s2-t2" name="Tablet Header">
+<kw name="Set Tablet Screen" library="share">
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>768</arg>
+<arg>768</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:41.343" starttime="20191003 05:46:41.220"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:41.343" starttime="20191003 05:46:41.219"></status>
+</kw>
+<kw name="Check Header Should Be Visible" library="header_layout">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id:${header_id}</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:41.370" starttime="20191003 05:46:41.344"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:41.370" starttime="20191003 05:46:41.343"></status>
+</kw>
+<kw name="Check Hamburger menu Should Be Visible" library="header_layout">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>id:${hambuerger_menu_id}</arg>
+</arguments>
+<msg timestamp="20191003 05:46:41.394" level="INFO">Element 'id:header_hamburger_menu_open' is displayed.</msg>
+<status status="PASS" endtime="20191003 05:46:41.394" starttime="20191003 05:46:41.370"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:41.394" starttime="20191003 05:46:41.370"></status>
+</kw>
+<kw name="Check Menu List" library="header_layout">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:${hambuerger_menu_id}</arg>
+</arguments>
+<msg timestamp="20191003 05:46:41.395" level="INFO">Clicking element 'id:header_hamburger_menu_open'.</msg>
+<status status="PASS" endtime="20191003 05:46:41.447" starttime="20191003 05:46:41.395"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>id:${close_button_menu_id}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191003 05:46:41.563" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191003 05:46:41.563" starttime="20191003 05:46:41.470"></status>
+</kw>
+<msg timestamp="20191003 05:46:41.563" level="FAIL">The element 'id:header_hamburger_menu_close' should be visible, but it is not.</msg>
+<status status="FAIL" endtime="20191003 05:46:41.563" starttime="20191003 05:46:41.447"></status>
+</kw>
+<status status="FAIL" endtime="20191003 05:46:41.563" starttime="20191003 05:46:41.394"></status>
+</kw>
+<tags>
+<tag>Development</tag>
+<tag>Production</tag>
+<tag>Staging</tag>
+</tags>
+<status status="FAIL" endtime="20191003 05:46:41.564" critical="yes" starttime="20191003 05:46:41.218">The element 'id:header_hamburger_menu_close' should be visible, but it is not.</status>
+</test>
+<test id="s1-s2-t3" name="Desktop Header">
+<kw name="Set Desktop Screen" library="share">
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>1164</arg>
+<arg>768</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:41.674" starttime="20191003 05:46:41.565"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:41.674" starttime="20191003 05:46:41.565"></status>
+</kw>
+<kw name="Check Desktop Header Menu" library="header_layout">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>class:desktop-menu</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191003 05:46:41.799" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191003 05:46:41.799" starttime="20191003 05:46:41.692"></status>
+</kw>
+<msg timestamp="20191003 05:46:41.799" level="FAIL">Element with locator 'class:desktop-menu' not found.</msg>
+<status status="FAIL" endtime="20191003 05:46:41.799" starttime="20191003 05:46:41.674"></status>
+</kw>
+<status status="FAIL" endtime="20191003 05:46:41.799" starttime="20191003 05:46:41.674"></status>
+</kw>
+<tags>
+<tag>Development</tag>
+<tag>Production</tag>
+<tag>Staging</tag>
+</tags>
+<status status="FAIL" endtime="20191003 05:46:41.799" critical="yes" starttime="20191003 05:46:41.564">Element with locator 'class:desktop-menu' not found.</status>
+</test>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20191003 05:46:42.879" starttime="20191003 05:46:41.800"></status>
+</kw>
+<status status="FAIL" endtime="20191003 05:46:42.879" starttime="20191003 05:46:37.620"></status>
+</suite>
+<suite source="/usr/src/project/cases/landding_page_check.robot" id="s1-s3" name="Landding Page Check">
+<kw type="setup" name="Open Landing Page" library="share">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=headlesschrome</arg>
+</arguments>
+<msg timestamp="20191003 05:46:42.898" level="INFO">Opening browser 'headlesschrome' to base url 'http://192.168.1.115'.</msg>
+<status status="PASS" endtime="20191003 05:46:53.675" starttime="20191003 05:46:42.898"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id:logo_header</arg>
+</arguments>
+<status status="PASS" endtime="20191003 05:46:53.710" starttime="20191003 05:46:53.675"></status>
+</kw>
+<status status="PASS" endtime="20191003 05:46:53.710" starttime="20191003 05:46:42.897"></status>
+</kw>
+<test id="s1-s3-t1" name="Check Landing Page Section">
+<kw name="ต้องมี section เขื่อนไข" library="landing">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>id:condition-detail-panel</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191003 05:46:53.807" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20191003 05:46:53.807" starttime="20191003 05:46:53.725"></status>
+</kw>
+<msg timestamp="20191003 05:46:53.807" level="FAIL">Element with locator 'id:condition-detail-panel' not found.</msg>
+<status status="FAIL" endtime="20191003 05:46:53.807" starttime="20191003 05:46:53.712"></status>
+</kw>
+<status status="FAIL" endtime="20191003 05:46:53.807" starttime="20191003 05:46:53.711"></status>
+</kw>
+<status status="FAIL" endtime="20191003 05:46:53.807" critical="yes" starttime="20191003 05:46:53.711">Element with locator 'id:condition-detail-panel' not found.</status>
+</test>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20191003 05:46:54.854" starttime="20191003 05:46:53.808"></status>
+</kw>
+<status status="FAIL" endtime="20191003 05:46:54.854" starttime="20191003 05:46:42.882"></status>
+</suite>
+<status status="FAIL" endtime="20191003 05:46:54.857" starttime="20191003 05:46:30.051"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="5" pass="2">Critical Tests</stat>
+<stat fail="5" pass="2">All Tests</stat>
 </total>
 <tag>
+<stat fail="3" pass="0">Development</stat>
+<stat fail="1" pass="2">PROD</stat>
+<stat fail="3" pass="0">Production</stat>
+<stat fail="1" pass="2">SIT</stat>
+<stat fail="3" pass="0">Staging</stat>
+<stat fail="1" pass="2">UAT</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Test" pass="1">Test</stat>
+<stat fail="5" id="s1" name="Footer Responsive &amp; Header Responsive &amp; Landding Page Check" pass="2">Footer Responsive &amp; Header Responsive &amp; Landding Page Check</stat>
+<stat fail="1" id="s1-s1" name="Footer Responsive" pass="2">Footer Responsive &amp; Header Responsive &amp; Landding Page Check.Footer Responsive</stat>
+<stat fail="3" id="s1-s2" name="Header Responsive" pass="0">Footer Responsive &amp; Header Responsive &amp; Landding Page Check.Header Responsive</stat>
+<stat fail="1" id="s1-s3" name="Landding Page Check" pass="0">Footer Responsive &amp; Header Responsive &amp; Landding Page Check.Landding Page Check</stat>
 </suite>
 </statistics>
 <errors>

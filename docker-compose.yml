@@ -1,0 +1,9 @@
+version: '3'
+services:
+  robot:
+    build: .
+    container_name: robot
+    # image: mcr.microsoft.com/dotnet/core/sdk:3.0.100-buster
+    network_mode: bridge
+    ports:
+      - "5000:5000"

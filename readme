@@ -2,4 +2,4 @@
 docker build -t robot-docker .
 
 *** Map local and run container ***
-docker run -ti -v /Users/danai.t/Project/robotTest/robot:/usr/src/project robot-docker sh
+docker run -ti -v /Users/{user}/Project/robotTest/robot:/usr/src/project robot-docker sh
